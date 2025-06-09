@@ -1,0 +1,17 @@
+<nav>
+    <!-- hay que poner el router link active en options a exact true, porque si no, 
+    todas las rutas que contengan el slash se van a poner a rojo.
+    Es decir, si estoy en hero, el home tambien va a estar seleccionado
+    porque tanto hero como home tienenn el slash al principio -->
+
+    <a routerLink="" 
+    routerLinkActive="active" 
+    [routerLinkActiveOptions]="{exact:true}">
+    home</a>
+    <!-- se pone entre corchetes por si quiero pasarle parametros a la ruta -->
+    <a [routerLink]="['/hero']" [routerLinkActive]="'active'"   >hero</a>
+    <a [routerLink]="['/dragonball']" [routerLinkActive]="'active'"   >dragonball</a>
+    <a [routerLink]="['/dragonballsuper']" [routerLinkActive]="'active'"   >dragonball super</a>
+
+
+</nav>

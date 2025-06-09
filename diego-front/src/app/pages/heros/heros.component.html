@@ -8,10 +8,13 @@
   <td>Edad:</td>
   <dd>{{ age() }}</dd>
 
-  <td>Método:</td>
-  <dd>{{ getHeroDescription() }}</dd>
+  <td>Métodoaaa:</td>
+  <dd>{{ heroDescription() }}</dd>
 
-  <td>Capitalizado:</td>
+  <td>Capitaliado:</td>
+    <dd>{{ capitalizedName() }}</dd>
+    <!-- aqui tenemos un pipe que nos hace mayusculas el nombre -->
+    <td>{{name() | uppercase}}</td>
   <!-- ! Intentar  -->
   <!-- <dd> {{ 'Mostrar nombre TODO EN MAYÚSCULAS' }} </dd> -->
 </dl>
@@ -22,7 +25,7 @@
   Cambiar nombre
 </button>
 
-<button class="btn btn-primary">Cambiar edad</button>
+<button (click)= "changeAge()" class="btn btn-primary">Cambiar edad</button>
 
 <button (click)= "resetForm()" class="btn btn-primary mx-2">Reset</button>
 <!-- no funcionan los botones -->

@@ -7,7 +7,7 @@ import { Component, signal } from '@angular/core';
   styleUrl: './counter.component.scss'
 })
 export class CounterComponent {
-  counter = 15
+  counter = 15;
   counterSignal = signal(15);
   constructor() {
       // Initialize the counter with a value 
