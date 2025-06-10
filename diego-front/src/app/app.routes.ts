@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-import { CounterComponent } from './components/counter/counter.component';
-import { HerosComponent } from './components/heros/heros.component';
-import { DragonballComponent } from './components/dragonball/dragonball.component';
-import { DragonballsuperComponent } from './components/dragonballsuper/dragonballsuper.component';
+import { CounterComponent } from './pages/counter/counter.component';
+import { HerosComponent } from './pages/heros/heros.component';
+import { DragonballComponent } from './pages/dragonball/dragonball.component';
+import { DragonballsuperComponent } from './pages/dragonballsuper/dragonballsuper.component';
 
 export const routes: Routes = [
 
