@@ -3,40 +3,26 @@
 
 <section class="row">
     <div class="col-12 col-md-6">
-        <h3>Agregar:  </h3>
-        <input type="text" class="form-control mb-2" placeholder="Nombre "  
-            [value]=" name()"
-            (change)="name.set(txt.value)"
-            #txt
-        
+        <!-- se pone el dolar con event para enviar valores pequeños, no enviar
+        valores muy grandes -->
+        <!-- al ser un componente personalizado, tenemos un solo evento que hemos
+        definido con una funcion. Un evento es el click del botón por ejemplo definido -->
+        <!-- en este caso nuestro evento es el newCharacter -->
+        <dragonball-character-add
+            (newCharacter)= "dragonballService.addCharacter($event)"
         />
-        <!-- si se le añade +, transforma de texto a int -->
-        <input type="text" class="form-control mb-2" placeholder="Poder" 
-            [value]=" power()"
-            (change)="power.set(+num.value)"
-            #num
-        />
-        <button (click)=" addCharacter()" class="mt-2 btn btn-primary ">Agregar</button>
     </div>
 
    
     <div class="col-12 col-sm-6">
-        <h3>Listado:</h3>
-        <!-- ol es para añadir una lista ordenada con numeros, si no solo hay un punto al principio -->
-        <ul>
-            <!-- no usar track indez porque puede dar error si modifico el array -->
-            @for (character of characters(); track character.id; let idx = $index) {
-                <li class="list-group-item">
-                    <span class="fw-bold">{{idx +1}} - {{ character.name }}</span>
-                    <!-- ahora queremos que solo se use txet danger cuando el
-                    poder sea mayor a 9000 -->
-                    <strong 
-                        [class.text-danger]="character.power>=9000"
-                        [class.text-primary]="character.power<9000"
-                        
-                        > - ({{ character.power }})</strong>
-            }
-        </ul>
+        <!-- lo que va entre corchetes cuadrados es porque es dinamico y cambia
+        si no va entre corchetes cuadrados no cambia y se puede enviar tal cual -->
+
+        <dragonball-character-list 
+        
+            listado="Listado fuertes:"
+            [characters]="dragonballService.characters()"/>
+        
         
     </div>
 

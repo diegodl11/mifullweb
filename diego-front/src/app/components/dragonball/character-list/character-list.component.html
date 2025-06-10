@@ -1,0 +1,18 @@
+<h3>{{listado()}}</h3>
+        <!-- ol es para añadir una lista ordenada con numeros, si no solo hay un punto al principio -->
+        <ul>
+            <!-- no usar track indez porque puede dar error si modifico el array -->
+            @for (character of characters(); track character.id; let idx = $index) {
+                <li class="list-group-item">
+                    <span class="fw-bold">{{idx +1}} - {{ character.name }}</span>
+                    <!-- ahora queremos que solo se use txet danger cuando el
+                    poder sea mayor a 9000 -->
+                    <strong 
+                        [class.text-danger]="character.power>=9000"
+                        [class.text-primary]="character.power<9000"
+                        
+                        > - ({{ character.power }})</strong>
+            }
+        </ul>
+
+
